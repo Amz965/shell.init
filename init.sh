@@ -132,9 +132,7 @@ PS1="\[\e[37;40m\][\[\e[34;40m\]\u\[\e[37;40m\]@\[\e[35;40m\]\h \[\e[36;40m\]\t 
 #export LC_ALL="zh_CN.utf8"
 
 # verdict
-if [ -f "$HOME/.bashrc" ]; then
-	echo "There exists .bashrc file, please modify manually."
-else
+if [ ! -f "$HOME/.bashrc" ]; then
 	cp init.sh $HOME/.bashrc_init
 fi
 
@@ -142,9 +140,9 @@ fi
 ## z.sh
 if [ ! `which z` ];then
 	if [ -d "$HOME/.init_scripts" ];then
-		source .init_scripts/z.sh
+		source $HOME/.init_scripts/z.sh
 	else
-		mkdir -p .init_scripts && cd .init_scripts
+		mkdir -p $HOME/.init_scripts && cd $HOME/.init_scripts
 		git clone git@github.com:Simon6089/shell.init.git && mv shell.init/z.sh ./
 		source z.sh
 	fi	
