@@ -113,8 +113,8 @@ fi
 
 # new quick
 alias jobs="jobs -l"
-alias eb="vim /home/simon/.bashrc"
-alias rebash="source /home/simon/.bashrc"
+alias eb="vim $HOME/.bashrc"
+alias rebash="source $HOME/.bashrc"
 alias top="top -M"
 alias who="who -T"
 alias df="df -h"
@@ -134,8 +134,6 @@ PS1="\[\e[37;40m\][\[\e[34;40m\]\u\[\e[37;40m\]@\[\e[35;40m\]\h \[\e[36;40m\]\t 
 # verdict
 if [ ! -f "$HOME/.bashrc" ]; then
 	cp init.sh $HOME/.bashrc
-else
-	cp init.sh $HOME/.bashrc_init
 fi
 
 # some tools
