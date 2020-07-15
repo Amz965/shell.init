@@ -133,6 +133,8 @@ PS1="\[\e[37;40m\][\[\e[34;40m\]\u\[\e[37;40m\]@\[\e[35;40m\]\h \[\e[36;40m\]\t 
 
 # verdict
 if [ ! -f "$HOME/.bashrc" ]; then
+	cp init.sh $HOME/.bashrc
+else
 	cp init.sh $HOME/.bashrc_init
 fi
 
